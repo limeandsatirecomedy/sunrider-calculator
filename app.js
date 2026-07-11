@@ -3,6 +3,7 @@ const rankIndex=Object.fromEntries(ranks.map((x,i)=>[x,i]));
 const uni=[[0,0,0,0,0],[5,0,0,0,0],[7,0,0,0,0],[9,2,0,0,0],[10,4,0,0,0],[10,5,2,0,0],[10,6,4,0,0],[10,8,5,2,0],[10,8,5,2,2],[10,8,5,2,2],[10,8,5,2,2],[10,8,5,2,2],[10,8,5,2,2],[10,8,5,2,2]];
 const fast={"Star Prime":2500,"Star Elite":5000,"Ace":8000,"Ace Prime":11000,"Ace Elite":13500};
 const fixed=[0,0,0,0,0,1800,3600,4800,6000,6000,6000,6000,6000,6000];
+const AVG_QV_VALUE = 38;
 const q=s=>document.querySelector(s), n=s=>Math.max(0,Number(q(s).value)||0), money=x=>new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',minimumFractionDigits:2}).format(x);
 function fill(){const options=ranks.map(r=>`<option>${r}</option>`).join('');q('#title').innerHTML=options;q('#career-title').innerHTML=options;q('#fast-rank').innerHTML=Object.keys(fast).map(r=>`<option>${r}</option>`).join('')}
 function calculate(e){if(e)e.preventDefault();const ti=rankIndex[q('#title').value], out={};
