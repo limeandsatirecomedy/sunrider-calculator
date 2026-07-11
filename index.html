@@ -1,16 +1,156 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#176b3a"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css">
-  <title>Sunrider India Compensation Calculator</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#176b3a">
+
+<title>
+Sunrider India Infinity Compensation Estimator
+</title>
+
+<link rel="manifest"
+href="manifest.webmanifest">
+
+<link rel="stylesheet"
+href="styles.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
 </head>
+
 <body>
-<header><p>SUNRIDER INDIA · INFINITY PLAN</p><h1>Compensation Calculator</h1><span>2026 plan · nine-bonus breakdown</span></header>
+
+<header class="hero">
+
+<div class="hero-inner">
+
+<h3>
+
+🌿 SUNRIDER INDIA
+
+</h3>
+
+<h1>
+
+Infinity Compensation Estimator
+
+</h1>
+
+<p>
+
+Based on the 2025 Infinity Compensation Plan
+
+</p>
+
+</div>
+
+</header>
+
 <main>
-  <section class="notice">Enter the commissionable values from your back office. This is an estimate: company caps, qualification, cancellations, refunds, and final eligibility determine the official payout.</section>
-  <form id="calculator">
-  <section class="panel"><h2>Your titles</h2><div class="grid"><label>Monthly paid-as title<select id="title"></select></label><label>Career title<select id="career-title"></select></label></div><p class="minor">Monthly Paid-As Title controls monthly commissions such as Unilevel. Career Title is your highest achieved title and is used only where the plan specifically requires it.</p></section>
+
+<section class="notice">
+
+<h3>
+
+Estimator Assumptions
+
+</h3>
+
+<ul>
+
+<li>
+Uses Back Office values entered by the user.
+</li>
+
+<li>
+Average ₹ value per PV/QV is editable.
+</li>
+
+<li>
+Company qualification, caps, refunds,
+adjustments and official calculations
+may affect the final payout.
+</li>
+
+<li>
+This calculator provides estimates only
+and is not an official Sunrider statement.
+</li>
+
+</ul>
+
+</section>
+
+<form id="calculator">
+
+<section class="panel">
+
+<h2>
+
+Your Information
+
+</h2>
+
+<div class="grid">
+
+<label>
+
+Monthly Paid-As Title
+
+<select id="title"></select>
+
+</label>
+
+<label>
+
+Career Title
+
+<select id="career-title"></select>
+
+</label>
+
+<label>
+
+Average ₹ per PV / QV
+
+<input
+id="avg-value"
+type="number"
+value="38"
+step="0.01"
+min="1">
+
+</label>
+
+</div>
+
+<p class="minor">
+
+Your Monthly Paid-As Title determines
+monthly commission eligibility.
+
+Career Title is your highest achieved title.
+
+Average ₹ per PV/QV can be edited to
+reflect your own estimate.
+
+</p>
+
+</section>
     <details open><summary><b>1. Retail Sales Bonus (Personal Sales Commission)</b><em id="retail-result">₹0.00</em></summary><p>Calculated as: Personal Volume (PV) × ₹38 × PV-tier percentage. The PV-tier rate is 0%, 3%, 5%, 8%, 10%, or 15%.</p><div class="grid"><label>Personal Volume (PV)<input id="retail-pv" type="number" min="0" step="any" value="0"></label></div><p class="minor" id="retail-note"></p></details>
     <details><summary><b>2. Fast Start Bonus</b><em id="fast-result">₹0.00</em></summary><p>One-time promotion bonus during the applicable Fast Start period. Sponsor match is shown separately when eligible.</p><div class="grid"><label>Promotion<select id="fast-rank"></select></label><label>Promoted within the stated Fast Start period?<select id="fast-time"><option value="yes">Yes</option><option value="no">No</option></select></label><label>Sponsor eligible (equal/higher title; Star Elite+ for Star Prime)?<select id="fast-sponsor"><option value="yes">Yes</option><option value="no">No</option></select></label></div><p class="minor" id="fast-note"></p></details>
     <details><summary><b>3. Ace Royal Advancement Bonus</b><em id="ace-result">₹0.00</em></summary><p>₹25,000 per first-time Ace Royal advancement in your personal group, plus ₹25,000 matching amount when you are paid as Ace Royal or higher.</p><div class="grid"><label>First-time Ace Royal advances<input id="ace-advances" type="number" min="0" step="1" value="0"></label><label>Eligible matching advances<input id="ace-matches" type="number" min="0" step="1" value="0"></label></div></details>
