@@ -5,30 +5,41 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
+<meta
+name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<meta name="theme-color" content="#176b3a">
+<meta
+name="theme-color"
+content="#176b3a">
 
 <title>
-Sunrider India Infinity Compensation Estimator
+
+Sunrider India
+Infinity Compensation Calculator
+
 </title>
 
-<link rel="manifest"
-href="manifest.webmanifest">
-
-<link rel="stylesheet"
-href="styles.css">
-
-<link rel="preconnect"
+<link
+rel="preconnect"
 href="https://fonts.googleapis.com">
 
-<link rel="preconnect"
+<link
+rel="preconnect"
 href="https://fonts.gstatic.com"
 crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
 rel="stylesheet">
+
+<link
+rel="manifest"
+href="manifest.webmanifest">
+
+<link
+rel="stylesheet"
+href="styles.css">
 
 </head>
 
@@ -36,132 +47,1113 @@ rel="stylesheet">
 
 <header class="hero">
 
-<div class="hero-inner">
+    <div class="hero-overlay"></div>
 
-<h3>
+    <div class="hero-content">
 
-🌿 SUNRIDER INDIA
+        <div class="hero-left">
 
-</h3>
+            <span class="hero-tag">
+                SUNRIDER INDIA · INFINITY PLAN
+            </span>
 
-<h1>
+            <h1>
+                Sunrider Infinity 
+                Compensation Calculator
+            </h1>
 
-Infinity Compensation Estimator
+            <p>
+                Estimate your monthly earnings instantly using the official
+                Sunrider India Compensation Plan.
+            </p>
 
-</h1>
+        </div>
 
-<p>
+        <div class="hero-right">
 
-Based on the 2025 Infinity Compensation Plan
+            <div class="income-card">
 
-</p>
+                <span class="income-label">
+                    Estimated Monthly Income
+                </span>
 
-</div>
+                <h2 id="grandTotal">
+                    ₹0.00
+                </h2>
+
+                <small>
+                    Live estimate
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </header>
 
-<main>
+<section class="hero-summary">
 
-<section class="notice">
+    <div class="hero-card">
 
-<h3>
+        <span>Monthly Paid-As</span>
 
-Estimator Assumptions
+        <strong id="summaryPaidAs">
+            IBO
+        </strong>
 
-</h3>
+    </div>
 
-<ul>
+    <div class="hero-card">
 
-<li>
-Uses Back Office values entered by the user.
-</li>
+        <span>Career Title</span>
 
-<li>
-Average ₹ value per PV/QV is editable.
-</li>
+        <strong id="summaryCareer">
+            IBO
+        </strong>
 
-<li>
-Company qualification, caps, refunds,
-adjustments and official calculations
-may affect the final payout.
-</li>
+    </div>
 
-<li>
-This calculator provides estimates only
-and is not an official Sunrider statement.
-</li>
+    <div class="hero-card">
 
-</ul>
+        <span>Average ₹ / PV</span>
+
+        <strong>
+            ₹<span id="summaryAverage">38</span>
+        </strong>
+
+    </div>
 
 </section>
 
+<main class="container">
+
 <form id="calculator">
 
-<section class="panel">
+
+
+<section class="card">
+
+<div class="section-title">
 
 <h2>
 
-Your Information
+Business Profile
 
 </h2>
 
-<div class="grid">
+</div>
+
+
+
+<div class="grid three">
+
+
+
+<div>
 
 <label>
 
 Monthly Paid-As Title
 
-<select id="title"></select>
-
 </label>
+
+<select id="title">
+
+</select>
+
+</div>
+
+
+
+<div>
 
 <label>
 
 Career Title
 
-<select id="career-title"></select>
-
 </label>
+
+<select id="career-title">
+
+</select>
+
+</div>
+
+
+
+<div>
 
 <label>
 
 Average ₹ per PV / QV
 
-<input
-id="avg-value"
-type="number"
-value="38"
-step="0.01"
-min="1">
-
 </label>
+
+<input
+
+type="number"
+
+id="avg-value"
+
+value="38"
+
+step="0.01"
+
+min="1">
 
 </div>
 
-<p class="minor">
 
-Your Monthly Paid-As Title determines
-monthly commission eligibility.
 
-Career Title is your highest achieved title.
+</div>
 
-Average ₹ per PV/QV can be edited to
-reflect your own estimate.
+</section>
+
+
+
+<section class="card">
+
+<div class="section-header">
+
+<h2>
+💰 1. Personal Sales Commission
+</h2>
+
+<div
+class="bonus-value"
+id="retail-result">
+
+₹0.00
+
+</div>
+
+</div>
+
+
+
+<p class="description">
+
+Retail Commission is calculated according to your
+Personal Volume (PV) slab.
+
+Formula:
+
+PV × Average ₹/PV × Commission %
+
+</p>
+
+
+
+<div class="grid two">
+
+
+
+<div>
+
+<label>
+
+Personal Volume (PV)
+
+</label>
+
+<input
+
+type="number"
+
+id="retail-pv"
+
+value="0"
+
+min="0">
+
+</div>
+
+
+
+<div>
+
+<label>
+
+Commission %
+
+</label>
+
+<div class="readonly">
+
+Calculated Automatically
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+<p
+
+class="formula"
+
+id="retail-note">
 
 </p>
 
 </section>
-    <details open><summary><b>1. Retail Sales Bonus (Personal Sales Commission)</b><em id="retail-result">₹0.00</em></summary><p>Calculated as: Personal Volume (PV) × ₹38 × PV-tier percentage. The PV-tier rate is 0%, 3%, 5%, 8%, 10%, or 15%.</p><div class="grid"><label>Personal Volume (PV)<input id="retail-pv" type="number" min="0" step="any" value="0"></label></div><p class="minor" id="retail-note"></p></details>
-    <details><summary><b>2. Fast Start Bonus</b><em id="fast-result">₹0.00</em></summary><p>One-time promotion bonus during the applicable Fast Start period. Sponsor match is shown separately when eligible.</p><div class="grid"><label>Promotion<select id="fast-rank"></select></label><label>Promoted within the stated Fast Start period?<select id="fast-time"><option value="yes">Yes</option><option value="no">No</option></select></label><label>Sponsor eligible (equal/higher title; Star Elite+ for Star Prime)?<select id="fast-sponsor"><option value="yes">Yes</option><option value="no">No</option></select></label></div><p class="minor" id="fast-note"></p></details>
-    <details><summary><b>3. Ace Royal Advancement Bonus</b><em id="ace-result">₹0.00</em></summary><p>₹25,000 per first-time Ace Royal advancement in your personal group, plus ₹25,000 matching amount when you are paid as Ace Royal or higher.</p><div class="grid"><label>First-time Ace Royal advances<input id="ace-advances" type="number" min="0" step="1" value="0"></label><label>Eligible matching advances<input id="ace-matches" type="number" min="0" step="1" value="0"></label></div></details>
-    <details><summary><b>4. Unilevel Bonus</b><em id="unilevel-result">₹0.00</em></summary><p>First select your paid-as title above (Star or higher), then enter eligible PV at each level. Each level is calculated as: Level PV × ₹38 × level percentage.</p><div class="grid levels"><label>Level 1 PV<input id="l1" type="number" min="0" value="0"></label><label>Level 2 PV<input id="l2" type="number" min="0" value="0"></label><label>Level 3 PV<input id="l3" type="number" min="0" value="0"></label><label>Level 4 PV<input id="l4" type="number" min="0" value="0"></label><label>Level 5 PV<input id="l5" type="number" min="0" value="0"></label></div><p class="minor" id="unilevel-note"></p></details>
-    <details><summary><b>5. Development Bonus</b><em id="development-result">₹0.00</em></summary><p>Enter each qualifying parallel leg once, using the highest paid-as title in that leg. A qualifying leg contains an IBO paid as Ace or higher.</p><div class="grid"><label>Legs with highest title: Ace<input id="dev-ace" type="number" min="0" step="1" value="0"></label><label>Legs with highest title: Ace Prime<input id="dev-prime" type="number" min="0" step="1" value="0"></label><label>Legs with highest title: Ace Elite<input id="dev-elite" type="number" min="0" step="1" value="0"></label><label>Legs with highest title: Ace Royal<input id="dev-royal" type="number" min="0" step="1" value="0"></label></div><p class="minor" id="development-note"></p></details>
-    <details><summary><b>6. Monthly Fixed Bonus</b><em id="fixed-result">₹0.00</em></summary><p>Ace Prime and above: multiply the plan amount for your title by the number of qualifying legs.</p><div class="grid"><label>Qualifying legs<input id="fixed-legs" type="number" min="0" step="1" value="0"></label></div><p class="minor" id="fixed-note"></p></details>
-    <details><summary><b>7. Check Match Bonus</b><em id="check-result">₹0.00</em></summary><p>Hero+ can match qualified downline Unilevel and Turbo Infinity earnings. Enter amounts already filtered by the allowed generation depth.</p><div class="grid"><label>Eligible earnings paid at Ace Elite or below (10%)<input id="match-ten" type="number" min="0" value="0"></label><label>Eligible earnings paid at Ace Royal+ (15%)<input id="match-fifteen" type="number" min="0" value="0"></label></div><p class="minor" id="check-note"></p></details>
-    <details><summary><b>8. Turbo Infinity Bonus</b><em id="turbo-result">₹0.00</em></summary><p>Hero+ earns 0.5% on eligible sales from Level 6 onward. The company applies a 3% CV cap if necessary.</p><div class="grid"><label>Eligible Level 6+ CV (₹)<input id="turbo-cv" type="number" min="0" value="0"></label></div></details>
-    <details><summary><b>9. Icon Bonus</b><em id="icon-result">₹0.00</em></summary><p>First-time Icon bonuses are paid only while qualified at that Icon rank during the schedule.</p><div class="grid"><label>First-time Icon promotion<select id="icon-rank"><option value="none">None</option><option value="icon">Icon — ₹600,000 / 5 months</option><option value="elite">Icon Elite — ₹1,200,000 / 8 months</option><option value="royal">Icon Royal — ₹3,000,000 / 12 months</option></select></label><label>Qualified payout months completed<input id="icon-months" type="number" min="0" step="1" value="0"></label></div><p class="minor" id="icon-note"></p></details>
-    <button type="submit">Calculate all bonuses</button>
-  </form>
-  <section class="total"><span>Estimated total payout</span><strong id="total">₹0.00</strong><div id="breakdown"></div></section>
-</main><footer>Based on Sunrider India Infinity Compensation Plan (2026). Not an official payout statement.</footer><script src="app.js"></script>
-</body></html>
+
+
+
+<section class="card">
+
+<div class="section-header">
+
+<h2>
+🚀 2. Fast Start Bonus
+</h2>
+
+<div
+
+class="bonus-value"
+
+id="fast-result">
+
+₹0.00
+
+</div>
+
+</div>
+
+
+
+<p class="description">
+
+Fast Start Bonus is awarded when the qualifying title
+is achieved within the prescribed period.
+
+</p>
+
+
+
+<div class="grid three">
+
+<div>
+
+<label>
+
+Promotion Achieved
+
+</label>
+
+<select id="fast-rank">
+
+</select>
+
+</div>
+
+<div>
+
+<label>
+
+Qualified Within Time?
+
+</label>
+
+<select id="fast-time">
+
+<option value="yes">
+
+Yes
+
+</option>
+
+<option value="no">
+
+No
+
+</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>
+
+Sponsor Match Eligible?
+
+</label>
+
+<select id="fast-sponsor">
+
+<option value="yes">
+
+Yes
+
+</option>
+
+<option value="no">
+
+No
+
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+<p
+
+class="formula"
+
+id="fast-note">
+
+</p>
+
+</section>
+<!-- ===================================================== -->
+<!-- 3. ACE ROYAL ADVANCEMENT BONUS -->
+<!-- ===================================================== -->
+
+<section class="card">
+
+    <div class="section-header">
+
+      <h2>
+👑 3. Ace Royal Advancement Bonus
+</h2>
+
+        <div
+            class="bonus-value"
+            id="ace-result">
+
+            ₹0.00
+
+        </div>
+
+    </div>
+
+    <p class="description">
+
+        Earn ₹25,000 for every eligible first-time Ace Royal
+        Advancement. Matching advancements are also calculated.
+
+    </p>
+
+    <div class="grid two">
+
+        <div>
+
+            <label>
+
+                First-Time Ace Royal Advancements
+
+            </label>
+
+            <input
+                type="number"
+                id="ace-advances"
+                value="0"
+                min="0">
+
+        </div>
+
+        <div>
+
+            <label>
+
+                Eligible Matching Advancements
+
+            </label>
+
+            <input
+                type="number"
+                id="ace-matches"
+                value="0"
+                min="0">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- 4. UNILEVEL BONUS -->
+<!-- ===================================================== -->
+
+<section class="card">
+
+    <div class="section-header">
+
+        <h2>
+🌐 4. Unilevel Bonus
+</h2>
+
+        <div
+            class="bonus-value"
+            id="unilevel-result">
+
+            ₹0.00
+
+        </div>
+
+    </div>
+
+    <p class="description">
+
+        Enter the qualified Personal Volume (PV)
+        generated at each level.
+
+        Formula:
+
+        Level PV × Average ₹/PV × Percentage.
+
+    </p>
+
+    <div class="grid five">
+
+        <div>
+
+            <label>
+
+                Level 1 PV
+
+            </label>
+
+            <input
+                type="number"
+                id="l1"
+                value="0"
+                min="0">
+
+        </div>
+
+        <div>
+
+            <label>
+
+                Level 2 PV
+
+            </label>
+
+            <input
+                type="number"
+                id="l2"
+                value="0"
+                min="0">
+
+        </div>
+
+        <div>
+
+            <label>
+
+                Level 3 PV
+
+            </label>
+
+            <input
+                type="number"
+                id="l3"
+                value="0"
+                min="0">
+
+        </div>
+
+        <div>
+
+            <label>
+
+                Level 4 PV
+
+            </label>
+
+            <input
+                type="number"
+                id="l4"
+                value="0"
+                min="0">
+
+        </div>
+
+        <div>
+
+            <label>
+
+                Level 5 PV
+
+            </label>
+
+            <input
+                type="number"
+                id="l5"
+                value="0"
+                min="0">
+
+        </div>
+
+    </div>
+
+    <p
+        class="formula"
+        id="unilevel-note">
+
+    </p>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- 5. DEVELOPMENT BONUS -->
+<!-- ===================================================== -->
+
+<section class="card">
+
+    <div class="section-header">
+
+        <h2>
+📈 5. Development Bonus
+</h2>
+
+        <div
+            class="bonus-value"
+            id="development-result">
+
+            ₹0.00
+
+        </div>
+
+    </div>
+
+    <p class="description">
+
+        Enter the number of qualified Development
+        Bonus legs.
+
+    </p>
+
+    <div class="grid four">
+
+        <div>
+
+            <label>
+
+                Ace
+
+            </label>
+
+            <input
+                type="number"
+                id="dev-ace"
+                value="0"
+                min="0">
+
+        </div>
+
+        <div>
+
+            <label>
+
+                Ace Prime
+
+            </label>
+
+            <input
+                type="number"
+                id="dev-prime"
+                value="0"
+                min="0">
+
+        </div>
+
+        <div>
+
+            <label>
+
+                Ace Elite
+
+            </label>
+
+            <input
+                type="number"
+                id="dev-elite"
+                value="0"
+                min="0">
+
+        </div>
+
+        <div>
+
+            <label>
+
+                Ace Royal
+
+            </label>
+
+            <input
+                type="number"
+                id="dev-royal"
+                value="0"
+                min="0">
+
+        </div>
+
+    </div>
+
+    <p
+        class="formula"
+        id="development-note">
+
+    </p>
+
+</section>
+<!-- ===================================================== -->
+<!-- 6. CHECK MATCH BONUS -->
+<!-- ===================================================== -->
+
+<section class="card">
+
+    <div class="section-header">
+
+        <h2>
+🤝 6. Check Match Bonus
+</h2>
+
+        <div
+            class="bonus-value"
+            id="check-result">
+
+            ₹0.00
+
+        </div>
+
+    </div>
+
+    <p class="description">
+
+        Available to qualified Hero and above.
+        Enter the eligible earnings of your downline.
+        The calculator applies the matching percentage
+        according to the compensation plan.
+
+    </p>
+
+    <div class="grid two">
+
+        <div>
+
+            <label>
+
+                Eligible Earnings (10%)
+
+            </label>
+
+            <input
+                type="number"
+                id="match-ten"
+                value="0"
+                min="0">
+
+        </div>
+
+        <div>
+
+            <label>
+
+                Eligible Earnings (15%)
+
+            </label>
+
+            <input
+                type="number"
+                id="match-fifteen"
+                value="0"
+                min="0">
+
+        </div>
+
+    </div>
+
+    <p
+        class="formula"
+        id="check-note">
+
+    </p>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- 7. TURBO INFINITY BONUS -->
+<!-- ===================================================== -->
+
+<section class="card">
+
+    <div class="section-header">
+
+       <h2>
+⚡ 7. Turbo Infinity Bonus
+</h2>
+
+        <div
+            class="bonus-value"
+            id="turbo-result">
+
+            ₹0.00
+
+        </div>
+
+    </div>
+
+    <p class="description">
+
+        Enter the qualified commissionable volume (CV)
+        from Level 6 onwards.
+
+        The calculator applies the
+        Turbo Infinity percentage automatically.
+
+    </p>
+
+    <div class="grid one">
+
+        <div>
+
+            <label>
+
+                Eligible Level 6+ CV
+
+            </label>
+
+            <input
+                type="number"
+                id="turbo-cv"
+                value="0"
+                min="0">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- 8. ICON BONUS -->
+<!-- ===================================================== -->
+
+<section class="card">
+
+    <div class="section-header">
+
+      <h2>
+🏆 8. Icon Bonus
+</h2>
+
+        <div
+            class="bonus-value"
+            id="icon-result">
+
+            ₹0.00
+
+        </div>
+
+    </div>
+
+    <p class="description">
+
+        Select your first-time Icon qualification
+        and enter the number of qualified payout
+        months completed.
+
+    </p>
+
+    <div class="grid two">
+
+        <div>
+
+            <label>
+
+                Icon Rank
+
+            </label>
+
+            <select id="icon-rank">
+
+                <option value="none">
+
+                    Not Qualified
+
+                </option>
+
+                <option value="icon">
+
+                    Icon
+
+                </option>
+
+                <option value="elite">
+
+                    Icon Elite
+
+                </option>
+
+                <option value="royal">
+
+                    Icon Royal
+
+                </option>
+
+            </select>
+
+        </div>
+
+        <div>
+
+            <label>
+
+                Qualified Months
+
+            </label>
+
+            <input
+                type="number"
+                id="icon-months"
+                value="0"
+                min="0">
+
+        </div>
+
+    </div>
+
+    <p
+        class="formula"
+        id="icon-note">
+
+    </p>
+
+</section>
+<!-- ===================================================== -->
+<!-- ESTIMATED PAYOUT SUMMARY -->
+<!-- ===================================================== -->
+
+<section class="intro-card compact-intro">
+
+    <div class="intro-icon">
+        ℹ
+    </div>
+
+    <div class="intro-text">
+
+        <h3>Calculator Notes</h3>
+
+        <ul>
+
+            <li>Official Sunrider India Infinity Compensation Plan.</li>
+
+            <li>Calculates all 8 bonus categories.</li>
+
+            <li>Average ₹ / PV can be edited anytime.</li>
+
+            <li>This calculator provides an estimate. Final payout depends on company qualification.</li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+<section class="summary-card">
+
+    <div class="summary-header">
+
+        <div>
+
+            <span class="summary-label">
+
+                Estimated Monthly Payout
+
+            </span>
+
+            <h2 id="total">
+
+                ₹0.00
+
+            </h2>
+
+        </div>
+
+        <div class="summary-badge">
+
+            2025 PLAN
+
+        </div>
+
+    </div>
+
+    <p>
+
+        This is an estimated payout based on the information entered.
+        Final commissions are subject to company qualification,
+        adjustments, refunds and official payout calculations.
+
+    </p>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- BONUS BREAKDOWN -->
+<!-- ===================================================== -->
+
+<section class="summary-card">
+
+<h2>Bonus Summary</h2>
+
+<div class="summary-row">
+<span>Personal Sales Commission</span>
+<strong id="summary-retail">₹0.00</strong>
+</div>
+
+<div class="summary-row">
+<span>Fast Start Bonus</span>
+<strong id="summary-fast">₹0.00</strong>
+</div>
+
+<div class="summary-row">
+<span>Ace Royal Advancement</span>
+<strong id="summary-ace">₹0.00</strong>
+</div>
+
+<div class="summary-row">
+<span>Unilevel Bonus</span>
+<strong id="summary-unilevel">₹0.00</strong>
+</div>
+
+<div class="summary-row">
+<span>Development Bonus</span>
+<strong id="summary-development">₹0.00</strong>
+</div>
+
+<div class="summary-row">
+<span>Check Match Bonus</span>
+<strong id="summary-check">₹0.00</strong>
+</div>
+
+<div class="summary-row">
+<span>Turbo Infinity Bonus</span>
+<strong id="summary-turbo">₹0.00</strong>
+</div>
+
+<div class="summary-row">
+<span>Icon Bonus</span>
+<strong id="summary-icon">₹0.00</strong>
+</div>
+
+<hr>
+
+<div class="summary-row total">
+
+<span>Total Estimated Income</span>
+
+<strong id="summary-total">₹0.00</strong>
+
+</div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- ACTION BUTTONS -->
+<!-- ===================================================== -->
+
+<section class="action-card">
+
+    <button
+        type="button"
+        id="download-pdf"
+        class="btn btn-primary">
+
+        📄 Download PDF Report
+
+    </button>
+
+    <button
+        type="button"
+        id="print-report"
+        class="btn btn-secondary">
+
+        🖨 Print Report
+
+    </button>
+
+    <button
+        type="reset"
+        id="reset-calculator"
+        class="btn btn-light">
+
+        ↺ Reset Calculator
+
+    </button>
+
+</section>
+
+</form>
+
+</main>
+
+
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <p>
+
+            Sunrider India Infinity Compensation Estimator
+
+        </p>
+
+        <small>
+
+            Built for education and business planning.
+            This calculator provides estimated earnings based on
+            the 2025 compensation structure and should not be
+            considered an official payout statement.
+
+        </small>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ===================================================== -->
+<!-- JAVASCRIPT -->
+<!-- ===================================================== -->
+
+<script src="jspdf.umd.min.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
