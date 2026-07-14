@@ -628,7 +628,10 @@ if(heroAverage){
        BREAKDOWN
     ====================================================== */
 
-    q("#breakdown").innerHTML = `
+    const breakdown = q("#breakdown");
+
+if (breakdown) {
+    breakdown.innerHTML = `
 
         <div class="line">
 
