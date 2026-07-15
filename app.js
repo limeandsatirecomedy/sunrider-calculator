@@ -627,91 +627,23 @@ if(heroAverage){
     /* ======================================================
        BREAKDOWN
     ====================================================== */
+/* ======================================================
+   LIVE SUMMARY
+====================================================== */
 
-    const breakdown = q("#breakdown");
+q("#summary-retail").textContent      = money(out.retail);
+q("#summary-fast").textContent        = money(out.fast);
+q("#summary-ace").textContent         = money(out.aceRoyal);
+q("#summary-unilevel").textContent    = money(out.unilevel);
+q("#summary-development").textContent = money(out.development);
+q("#summary-check").textContent       = money(out.checkMatch);
+q("#summary-turbo").textContent       = money(out.turbo);
+q("#summary-icon").textContent        = money(out.icon);
 
-if (breakdown) {
-
-breakdown.innerHTML = `
-        <div class="line">
-
-            <span>Personal Sales Commission</span>
-
-            <strong>${money(out.retail)}</strong>
-
-        </div>
-
-        <div class="line">
-
-            <span>Fast Start Bonus</span>
-
-            <strong>${money(out.fast)}</strong>
-
-        </div>
-
-        <div class="line">
-
-            <span>Ace Royal Advancement</span>
-
-            <strong>${money(out.aceRoyal)}</strong>
-
-        </div>
-
-        <div class="line">
-
-            <span>Unilevel Bonus</span>
-
-            <strong>${money(out.unilevel)}</strong>
-
-        </div>
-
-        <div class="line">
-
-            <span>Development Bonus</span>
-
-            <strong>${money(out.development)}</strong>
-
-        </div>
-
-        <div class="line">
-
-            <span>Check Match Bonus</span>
-
-            <strong>${money(out.checkMatch)}</strong>
-
-        </div>
-
-        <div class="line">
-
-            <span>Turbo Infinity Bonus</span>
-
-            <strong>${money(out.turbo)}</strong>
-
-        </div>
-
-        <div class="line">
-
-            <span>Icon Bonus</span>
-
-            <strong>${money(out.icon)}</strong>
-
-        </div>
-
-        <hr>
-
-        <div class="line total">
-
-            <span>Total Estimated Payout</span>
-
-            <strong>${money(total)}</strong>
-
-        </div>
-
-    `;
-
+q("#summary-total").textContent = money(total);
+q("#total").textContent = money(total);
 }
-}
-// <-- End calculate()
+    // <-- End calculate()
 
 
 
