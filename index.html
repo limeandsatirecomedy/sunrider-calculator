@@ -11,7 +11,7 @@ content="width=device-width, initial-scale=1.0">
 
 <meta
 name="theme-color"
-content="#176b3a">
+content="#A6192E">
 
 <title>
 
@@ -30,7 +30,7 @@ href="https://fonts.gstatic.com"
 crossorigin>
 
 <link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap"
 rel="stylesheet">
 
 <link
@@ -45,11 +45,43 @@ href="styles.css">
 
 <body>
 
+<div class="app-shell">
+
+<!-- ===================================================== -->
+<!-- TOP BAR -->
+<!-- ===================================================== -->
+
+<header class="topbar">
+
+    <div class="container topbar-inner">
+
+        <div class="topbar-brand">
+
+            <span class="topbar-logo">SI</span>
+
+            <div class="topbar-brand-text">
+
+                <h1>Sunrider India</h1>
+
+                <p>Infinity Compensation Calculator</p>
+
+            </div>
+
+        </div>
+
+        <span class="topbar-badge">2025 PLAN</span>
+
+    </div>
+
+</header>
+
+<!-- ===================================================== -->
+<!-- HERO -->
+<!-- ===================================================== -->
+
 <header class="hero">
 
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
+    <div class="container hero-content">
 
         <div class="hero-left">
 
@@ -58,14 +90,47 @@ href="styles.css">
             </span>
 
             <h1>
-                Sunrider Infinity 
-                Compensation Calculator
+                Infinity Compensation Calculator
             </h1>
 
             <p>
                 Estimate your monthly earnings instantly using the official
                 Sunrider India Compensation Plan.
             </p>
+
+            <div class="hero-stats">
+
+                <div class="hero-stat">
+
+                    <span>Monthly Paid-As</span>
+
+                    <strong id="summaryPaidAs">
+                        IBO
+                    </strong>
+
+                </div>
+
+                <div class="hero-stat">
+
+                    <span>Career Title</span>
+
+                    <strong id="summaryCareer">
+                        IBO
+                    </strong>
+
+                </div>
+
+                <div class="hero-stat">
+
+                    <span>Average ₹ / PV</span>
+
+                    <strong>
+                        ₹<span id="summaryAverage">38</span>
+                    </strong>
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -93,363 +158,222 @@ href="styles.css">
 
 </header>
 
-<section class="hero-summary">
-
-    <div class="hero-card">
-
-        <span>Monthly Paid-As</span>
-
-        <strong id="summaryPaidAs">
-            IBO
-        </strong>
-
-    </div>
-
-    <div class="hero-card">
-
-        <span>Career Title</span>
-
-        <strong id="summaryCareer">
-            IBO
-        </strong>
-
-    </div>
-
-    <div class="hero-card">
-
-        <span>Average ₹ / PV</span>
-
-        <strong>
-            ₹<span id="summaryAverage">38</span>
-        </strong>
-
-    </div>
-
-</section>
-
-<main class="container">
-
-<form id="calculator">
-
-
-
-<section class="card">
-
-<div class="section-title">
-
-<h2>
-
-Business Profile
-
-</h2>
-
-</div>
-
-
-<div class="grid compact-profile">
-
-
-<div>
-
-<label>
-
-Monthly Paid-As Title
-
-</label>
-
-<select id="title">
-
-</select>
-
-</div>
-
-
-
-<div>
-
-<label>
-
-Career Title
-
-</label>
-
-<select id="career-title">
-
-</select>
-
-</div>
-
-
-
-<div>
-
-<label>
-
-Average ₹ per PV / QV
-
-</label>
-
-<input
-
-type="number"
-
-id="avg-value"
-
-value="38"
-
-step="0.01"
-
-min="1">
-
-</div>
-
-
-
-</div>
-
-</section>
-
-<section class="card compact-card">
-
-<div class="section-header">
-
-<h2>
-💰 1. Personal Sales Commission
-</h2>
-
-<div
-class="bonus-value"
-id="retail-result">
-
-₹0.00
-
-</div>
-
-</div>
-
-
-
-<p class="description">
-
-Retail Commission is calculated according to your
-Personal Volume (PV) slab.
-
-Formula:
-
-PV × Average ₹/PV × Commission %
-
-</p>
-
-
-
-<div class="grid two">
-
-
-
-<div>
-
-<label>
-
-Personal Volume (PV)
-
-</label>
-
-<input
-
-type="number"
-
-id="retail-pv"
-
-value="0"
-
-min="0">
-
-</div>
-
-
-
-<div>
-
-<label>
-
-Commission %
-
-</label>
-
-<div class="readonly">
-
-Calculated Automatically
-
-</div>
-
-</div>
-
-
-
-</div>
-
-
-
-<p
-
-class="formula"
-
-id="retail-note">
-
-</p>
-
-</section>
-
-
-
-<section class="card compact-card">
-
-<div class="section-header">
-
-<h2>
-🚀 2. Fast Start Bonus
-</h2>
-
-<div
-
-class="bonus-value"
-
-id="fast-result">
-
-₹0.00
-
-</div>
-
-</div>
-
-
-
-<p class="description">
-
-Fast Start Bonus is awarded when the qualifying title
-is achieved within the prescribed period.
-
-</p>
-
-
-
-<div class="grid three">
-
-<div>
-
-<label>
-
-Promotion Achieved
-
-</label>
-
-<select id="fast-rank">
-
-</select>
-
-</div>
-
-<div>
-
-<label>
-
-Qualified Within Time?
-
-</label>
-
-<select id="fast-time">
-
-<option value="yes">
-
-Yes
-
-</option>
-
-<option value="no">
-
-No
-
-</option>
-
-</select>
-
-</div>
-
-<div>
-
-<label>
-
-Sponsor Match Eligible?
-
-</label>
-
-<select id="fast-sponsor">
-
-<option value="yes">
-
-Yes
-
-</option>
-
-<option value="no">
-
-No
-
-</option>
-
-</select>
-
-</div>
-
-</div>
-
-<p
-
-class="formula"
-
-id="fast-note">
-
-</p>
-
-</section>
 <!-- ===================================================== -->
-<!-- 3. ACE ROYAL ADVANCEMENT BONUS -->
+<!-- MAIN DASHBOARD -->
 <!-- ===================================================== -->
 
-<section class="card compact-card">
+<main class="container dashboard">
 
-    <div class="section-header">
+<form id="calculator" class="dashboard-grid">
 
-      <h2>
-👑 3. Ace Royal Advancement Bonus
-</h2>
+<div class="dashboard-main">
 
-        <div
-            class="bonus-value"
-            id="ace-result">
+<!-- ===================================================== -->
+<!-- BUSINESS PROFILE -->
+<!-- ===================================================== -->
 
-            ₹0.00
+<section class="panel profile-panel">
+
+    <div class="panel-header solo">
+
+        <div class="panel-title-group">
+
+            <span class="panel-icon">🧾</span>
+
+            <h2 class="panel-title">Business Profile</h2>
 
         </div>
 
     </div>
 
-    <p class="description">
+    <div class="field-grid three">
 
-        Earn ₹25,000 for every eligible first-time Ace Royal
-        Advancement. Matching advancements are also calculated.
+        <div class="field">
 
+            <label>Monthly Paid-As Title</label>
+
+            <select id="title"></select>
+
+        </div>
+
+        <div class="field">
+
+            <label>Career Title</label>
+
+            <select id="career-title"></select>
+
+        </div>
+
+        <div class="field">
+
+            <label>Average ₹ per PV / QV</label>
+
+            <input
+                type="number"
+                id="avg-value"
+                value="38"
+                step="0.01"
+                min="1">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- BONUS DASHBOARD -->
+<!-- ===================================================== -->
+
+<div class="bonus-grid">
+
+<!-- 1. PERSONAL SALES COMMISSION -->
+
+<section class="panel">
+
+    <div class="panel-header">
+
+        <div class="panel-title-group">
+
+            <span class="panel-icon">💰</span>
+
+            <h2 class="panel-title">1. Personal Sales Commission</h2>
+
+        </div>
+
+        <div class="panel-value" id="retail-result">₹0.00</div>
+
+    </div>
+
+    <p class="panel-desc">
+        Retail Commission is calculated according to your
+        Personal Volume (PV) slab. Formula:
+        PV × Average ₹/PV × Commission %
     </p>
 
-    <div class="grid two">
+    <div class="field-grid two">
 
-        <div>
+        <div class="field">
 
-            <label>
+            <label>Personal Volume (PV)</label>
 
-                First-Time Ace Royal Advancements
+            <input
+                type="number"
+                id="retail-pv"
+                value="0"
+                min="0">
 
-            </label>
+        </div>
+
+        <div class="field">
+
+            <label>Commission %</label>
+
+            <div class="readonly">Calculated Automatically</div>
+
+        </div>
+
+    </div>
+
+    <p class="formula-note" id="retail-note"></p>
+
+</section>
+
+<!-- 2. FAST START BONUS -->
+
+<section class="panel">
+
+    <div class="panel-header">
+
+        <div class="panel-title-group">
+
+            <span class="panel-icon">🚀</span>
+
+            <h2 class="panel-title">2. Fast Start Bonus</h2>
+
+        </div>
+
+        <div class="panel-value" id="fast-result">₹0.00</div>
+
+    </div>
+
+    <p class="panel-desc">
+        Fast Start Bonus is awarded when the qualifying title
+        is achieved within the prescribed period.
+    </p>
+
+    <div class="field-grid three">
+
+        <div class="field">
+
+            <label>Promotion Achieved</label>
+
+            <select id="fast-rank"></select>
+
+        </div>
+
+        <div class="field">
+
+            <label>Qualified Within Time?</label>
+
+            <select id="fast-time">
+
+                <option value="yes">Yes</option>
+
+                <option value="no">No</option>
+
+            </select>
+
+        </div>
+
+        <div class="field">
+
+            <label>Sponsor Match Eligible?</label>
+
+            <select id="fast-sponsor">
+
+                <option value="yes">Yes</option>
+
+                <option value="no">No</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <p class="formula-note" id="fast-note"></p>
+
+</section>
+
+<!-- 3. ACE ROYAL ADVANCEMENT BONUS -->
+
+<section class="panel">
+
+    <div class="panel-header">
+
+        <div class="panel-title-group">
+
+            <span class="panel-icon">👑</span>
+
+            <h2 class="panel-title">3. Ace Royal Advancement Bonus</h2>
+
+        </div>
+
+        <div class="panel-value" id="ace-result">₹0.00</div>
+
+    </div>
+
+    <p class="panel-desc">
+        Earn ₹25,000 for every eligible first-time Ace Royal
+        Advancement. Matching advancements are also calculated.
+    </p>
+
+    <div class="field-grid two">
+
+        <div class="field">
+
+            <label>First-Time Ace Royal Advancements</label>
 
             <input
                 type="number"
@@ -459,13 +383,9 @@ id="fast-note">
 
         </div>
 
-        <div>
+        <div class="field">
 
-            <label>
-
-                Eligible Matching Advancements
-
-            </label>
+            <label>Eligible Matching Advancements</label>
 
             <input
                 type="number"
@@ -479,363 +399,218 @@ id="fast-note">
 
 </section>
 
-
-
-<!-- ===================================================== -->
 <!-- 4. UNILEVEL BONUS -->
-<!-- ===================================================== -->
 
-<section class="card compact-card">
+<section class="panel">
 
-    <div class="section-header">
+    <div class="panel-header">
 
-        <h2>
-🌐 4. Unilevel Bonus
-</h2>
+        <div class="panel-title-group">
 
-        <div
-            class="bonus-value"
-            id="unilevel-result">
+            <span class="panel-icon">🌐</span>
 
-            ₹0.00
+            <h2 class="panel-title">4. Unilevel Bonus</h2>
+
+        </div>
+
+        <div class="panel-value" id="unilevel-result">₹0.00</div>
+
+    </div>
+
+    <p class="panel-desc">
+        Enter the qualified Personal Volume (PV) generated at
+        each level. Formula: Level PV × Average ₹/PV × Percentage.
+    </p>
+
+    <div class="field-grid five">
+
+        <div class="field">
+
+            <label>Level 1 PV</label>
+
+            <input type="number" id="l1" value="0" min="0">
+
+        </div>
+
+        <div class="field">
+
+            <label>Level 2 PV</label>
+
+            <input type="number" id="l2" value="0" min="0">
+
+        </div>
+
+        <div class="field">
+
+            <label>Level 3 PV</label>
+
+            <input type="number" id="l3" value="0" min="0">
+
+        </div>
+
+        <div class="field">
+
+            <label>Level 4 PV</label>
+
+            <input type="number" id="l4" value="0" min="0">
+
+        </div>
+
+        <div class="field">
+
+            <label>Level 5 PV</label>
+
+            <input type="number" id="l5" value="0" min="0">
 
         </div>
 
     </div>
 
-    <p class="description">
-
-        Enter the qualified Personal Volume (PV)
-        generated at each level.
-
-        Formula:
-
-        Level PV × Average ₹/PV × Percentage.
-
-    </p>
-
-    <div class="grid five">
-
-        <div>
-
-            <label>
-
-                Level 1 PV
-
-            </label>
-
-            <input
-                type="number"
-                id="l1"
-                value="0"
-                min="0">
-
-        </div>
-
-        <div>
-
-            <label>
-
-                Level 2 PV
-
-            </label>
-
-            <input
-                type="number"
-                id="l2"
-                value="0"
-                min="0">
-
-        </div>
-
-        <div>
-
-            <label>
-
-                Level 3 PV
-
-            </label>
-
-            <input
-                type="number"
-                id="l3"
-                value="0"
-                min="0">
-
-        </div>
-
-        <div>
-
-            <label>
-
-                Level 4 PV
-
-            </label>
-
-            <input
-                type="number"
-                id="l4"
-                value="0"
-                min="0">
-
-        </div>
-
-        <div>
-
-            <label>
-
-                Level 5 PV
-
-            </label>
-
-            <input
-                type="number"
-                id="l5"
-                value="0"
-                min="0">
-
-        </div>
-
-    </div>
-
-    <p
-        class="formula"
-        id="unilevel-note">
-
-    </p>
+    <p class="formula-note" id="unilevel-note"></p>
 
 </section>
 
-
-
-<!-- ===================================================== -->
 <!-- 5. DEVELOPMENT BONUS -->
-<!-- ===================================================== -->
 
-<section class="card compact-card">
+<section class="panel">
 
-    <div class="section-header">
+    <div class="panel-header">
 
-        <h2>
-📈 5. Development Bonus
-</h2>
+        <div class="panel-title-group">
 
-        <div
-            class="bonus-value"
-            id="development-result">
+            <span class="panel-icon">📈</span>
 
-            ₹0.00
+            <h2 class="panel-title">5. Development Bonus</h2>
+
+        </div>
+
+        <div class="panel-value" id="development-result">₹0.00</div>
+
+    </div>
+
+    <p class="panel-desc">
+        Enter the number of qualified Development Bonus legs.
+    </p>
+
+    <div class="field-grid four">
+
+        <div class="field">
+
+            <label>Ace</label>
+
+            <input type="number" id="dev-ace" value="0" min="0">
+
+        </div>
+
+        <div class="field">
+
+            <label>Ace Prime</label>
+
+            <input type="number" id="dev-prime" value="0" min="0">
+
+        </div>
+
+        <div class="field">
+
+            <label>Ace Elite</label>
+
+            <input type="number" id="dev-elite" value="0" min="0">
+
+        </div>
+
+        <div class="field">
+
+            <label>Ace Royal</label>
+
+            <input type="number" id="dev-royal" value="0" min="0">
 
         </div>
 
     </div>
 
-    <p class="description">
-
-        Enter the number of qualified Development
-        Bonus legs.
-
-    </p>
-
-    <div class="grid four">
-
-        <div>
-
-            <label>
-
-                Ace
-
-            </label>
-
-            <input
-                type="number"
-                id="dev-ace"
-                value="0"
-                min="0">
-
-        </div>
-
-        <div>
-
-            <label>
-
-                Ace Prime
-
-            </label>
-
-            <input
-                type="number"
-                id="dev-prime"
-                value="0"
-                min="0">
-
-        </div>
-
-        <div>
-
-            <label>
-
-                Ace Elite
-
-            </label>
-
-            <input
-                type="number"
-                id="dev-elite"
-                value="0"
-                min="0">
-
-        </div>
-
-        <div>
-
-            <label>
-
-                Ace Royal
-
-            </label>
-
-            <input
-                type="number"
-                id="dev-royal"
-                value="0"
-                min="0">
-
-        </div>
-
-    </div>
-
-    <p
-        class="formula"
-        id="development-note">
-
-    </p>
+    <p class="formula-note" id="development-note"></p>
 
 </section>
-<!-- ===================================================== -->
+
 <!-- 6. CHECK MATCH BONUS -->
-<!-- ===================================================== -->
 
-<section class="card compact-card">
+<section class="panel">
 
-    <div class="section-header">
+    <div class="panel-header">
 
-        <h2>
-🤝 6. Check Match Bonus
-</h2>
+        <div class="panel-title-group">
 
-        <div
-            class="bonus-value"
-            id="check-result">
+            <span class="panel-icon">🤝</span>
 
-            ₹0.00
+            <h2 class="panel-title">6. Check Match Bonus</h2>
+
+        </div>
+
+        <div class="panel-value" id="check-result">₹0.00</div>
+
+    </div>
+
+    <p class="panel-desc">
+        Available to qualified Hero and above. Enter the eligible
+        earnings of your downline. The calculator applies the
+        matching percentage according to the compensation plan.
+    </p>
+
+    <div class="field-grid two">
+
+        <div class="field">
+
+            <label>Eligible Earnings (10%)</label>
+
+            <input type="number" id="match-ten" value="0" min="0">
+
+        </div>
+
+        <div class="field">
+
+            <label>Eligible Earnings (15%)</label>
+
+            <input type="number" id="match-fifteen" value="0" min="0">
 
         </div>
 
     </div>
 
-    <p class="description">
-
-        Available to qualified Hero and above.
-        Enter the eligible earnings of your downline.
-        The calculator applies the matching percentage
-        according to the compensation plan.
-
-    </p>
-
-    <div class="grid two">
-
-        <div>
-
-            <label>
-
-                Eligible Earnings (10%)
-
-            </label>
-
-            <input
-                type="number"
-                id="match-ten"
-                value="0"
-                min="0">
-
-        </div>
-
-        <div>
-
-            <label>
-
-                Eligible Earnings (15%)
-
-            </label>
-
-            <input
-                type="number"
-                id="match-fifteen"
-                value="0"
-                min="0">
-
-        </div>
-
-    </div>
-
-    <p
-        class="formula"
-        id="check-note">
-
-    </p>
+    <p class="formula-note" id="check-note"></p>
 
 </section>
 
-
-
-<!-- ===================================================== -->
 <!-- 7. TURBO INFINITY BONUS -->
-<!-- ===================================================== -->
 
-<section class="card compact-card">
+<section class="panel">
 
-    <div class="section-header">
+    <div class="panel-header">
 
-       <h2>
-⚡ 7. Turbo Infinity Bonus
-</h2>
+        <div class="panel-title-group">
 
-        <div
-            class="bonus-value"
-            id="turbo-result">
+            <span class="panel-icon">⚡</span>
 
-            ₹0.00
+            <h2 class="panel-title">7. Turbo Infinity Bonus</h2>
 
         </div>
 
+        <div class="panel-value" id="turbo-result">₹0.00</div>
+
     </div>
 
-    <p class="description">
-
-        Enter the qualified commissionable volume (CV)
-        from Level 6 onwards.
-
-        The calculator applies the
-        Turbo Infinity percentage automatically.
-
+    <p class="panel-desc">
+        Enter the qualified commissionable volume (CV) from
+        Level 6 onwards. The calculator applies the Turbo
+        Infinity percentage automatically.
     </p>
 
-    <div class="grid one">
+    <div class="field-grid one">
 
-        <div>
+        <div class="field">
 
-            <label>
+            <label>Eligible Level 6+ CV</label>
 
-                Eligible Level 6+ CV
-
-            </label>
-
-            <input
-                type="number"
-                id="turbo-cv"
-                value="0"
-                min="0">
+            <input type="number" id="turbo-cv" value="0" min="0">
 
         </div>
 
@@ -843,251 +618,174 @@ id="fast-note">
 
 </section>
 
-
-
-<!-- ===================================================== -->
 <!-- 8. ICON BONUS -->
-<!-- ===================================================== -->
 
-<section class="card compact-card">
+<section class="panel">
 
-    <div class="section-header">
+    <div class="panel-header">
 
-      <h2>
-🏆 8. Icon Bonus
-</h2>
+        <div class="panel-title-group">
 
-        <div
-            class="bonus-value"
-            id="icon-result">
+            <span class="panel-icon">🏆</span>
 
-            ₹0.00
+            <h2 class="panel-title">8. Icon Bonus</h2>
 
         </div>
 
+        <div class="panel-value" id="icon-result">₹0.00</div>
+
     </div>
 
-    <p class="description">
-
-        Select your first-time Icon qualification
-        and enter the number of qualified payout
-        months completed.
-
+    <p class="panel-desc">
+        Select your first-time Icon qualification and enter the
+        number of qualified payout months completed.
     </p>
 
-    <div class="grid two">
+    <div class="field-grid two">
 
-        <div>
+        <div class="field">
 
-            <label>
-
-                Icon Rank
-
-            </label>
+            <label>Icon Rank</label>
 
             <select id="icon-rank">
 
-                <option value="none">
+                <option value="none">Not Qualified</option>
 
-                    Not Qualified
+                <option value="icon">Icon</option>
 
-                </option>
+                <option value="elite">Icon Elite</option>
 
-                <option value="icon">
-
-                    Icon
-
-                </option>
-
-                <option value="elite">
-
-                    Icon Elite
-
-                </option>
-
-                <option value="royal">
-
-                    Icon Royal
-
-                </option>
+                <option value="royal">Icon Royal</option>
 
             </select>
 
         </div>
 
-        <div>
+        <div class="field">
 
-            <label>
+            <label>Qualified Months</label>
 
-                Qualified Months
-
-            </label>
-
-            <input
-                type="number"
-                id="icon-months"
-                value="0"
-                min="0">
+            <input type="number" id="icon-months" value="0" min="0">
 
         </div>
 
     </div>
 
-    <p
-        class="formula"
-        id="icon-note">
-
-    </p>
+    <p class="formula-note" id="icon-note"></p>
 
 </section>
+
+</div>
+<!-- /.bonus-grid -->
+
+</div>
+<!-- /.dashboard-main -->
+
 <!-- ===================================================== -->
-<!-- ESTIMATED PAYOUT SUMMARY -->
+<!-- SUMMARY SIDEBAR -->
 <!-- ===================================================== -->
 
+<aside class="dashboard-side">
 
+<div class="summary-panel">
 
-<section class="summary-card">
+    <div class="summary-head">
 
-    <div class="summary-header">
+        <span class="summary-plan-badge">2025 PLAN</span>
 
-        <div>
+        <span class="summary-label">Estimated Monthly Payout</span>
 
-            <span class="summary-label">
+        <h2 id="total">₹0.00</h2>
 
-                Estimated Monthly Payout
+    </div>
 
-            </span>
+    <div class="summary-list">
 
-            <h2 id="total">
-
-                ₹0.00
-
-            </h2>
-
+        <div class="summary-row">
+            <span>Personal Sales Commission</span>
+            <strong id="summary-retail">₹0.00</strong>
         </div>
 
-        <div class="summary-badge">
+        <div class="summary-row">
+            <span>Fast Start Bonus</span>
+            <strong id="summary-fast">₹0.00</strong>
+        </div>
 
-            2025 PLAN
+        <div class="summary-row">
+            <span>Ace Royal Advancement</span>
+            <strong id="summary-ace">₹0.00</strong>
+        </div>
 
+        <div class="summary-row">
+            <span>Unilevel Bonus</span>
+            <strong id="summary-unilevel">₹0.00</strong>
+        </div>
+
+        <div class="summary-row">
+            <span>Development Bonus</span>
+            <strong id="summary-development">₹0.00</strong>
+        </div>
+
+        <div class="summary-row">
+            <span>Check Match Bonus</span>
+            <strong id="summary-check">₹0.00</strong>
+        </div>
+
+        <div class="summary-row">
+            <span>Turbo Infinity Bonus</span>
+            <strong id="summary-turbo">₹0.00</strong>
+        </div>
+
+        <div class="summary-row">
+            <span>Icon Bonus</span>
+            <strong id="summary-icon">₹0.00</strong>
+        </div>
+
+        <div class="summary-row summary-row-total">
+            <span>Total Estimated Income</span>
+            <strong id="summary-total">₹0.00</strong>
         </div>
 
     </div>
 
-    <p>
-
+    <p class="summary-disclaimer">
         This is an estimated payout based on the information entered.
         Final commissions are subject to company qualification,
         adjustments, refunds and official payout calculations.
-
     </p>
 
-</section>
+    <div class="action-row">
 
+        <button
+            type="button"
+            id="download-pdf"
+            class="btn btn-primary">
+            📄 Download PDF
+        </button>
 
+        <button
+            type="button"
+            id="print-report"
+            class="btn btn-secondary">
+            🖨 Print
+        </button>
 
-<!-- ===================================================== -->
-<!-- BONUS BREAKDOWN -->
-<!-- ===================================================== -->
+        <button
+            type="reset"
+            id="reset-calculator"
+            class="btn btn-outline">
+            ↺ Reset
+        </button>
 
-<section class="summary-card">
-
-<h2>Bonus Summary</h2>
-
-<div class="summary-row">
-<span>Personal Sales Commission</span>
-<strong id="summary-retail">₹0.00</strong>
-</div>
-
-<div class="summary-row">
-<span>Fast Start Bonus</span>
-<strong id="summary-fast">₹0.00</strong>
-</div>
-
-<div class="summary-row">
-<span>Ace Royal Advancement</span>
-<strong id="summary-ace">₹0.00</strong>
-</div>
-
-<div class="summary-row">
-<span>Unilevel Bonus</span>
-<strong id="summary-unilevel">₹0.00</strong>
-</div>
-
-<div class="summary-row">
-<span>Development Bonus</span>
-<strong id="summary-development">₹0.00</strong>
-</div>
-
-<div class="summary-row">
-<span>Check Match Bonus</span>
-<strong id="summary-check">₹0.00</strong>
-</div>
-
-<div class="summary-row">
-<span>Turbo Infinity Bonus</span>
-<strong id="summary-turbo">₹0.00</strong>
-</div>
-
-<div class="summary-row">
-<span>Icon Bonus</span>
-<strong id="summary-icon">₹0.00</strong>
-</div>
-
-<hr>
-
-<div class="summary-row total">
-
-<span>Total Estimated Income</span>
-
-<strong id="summary-total">₹0.00</strong>
+    </div>
 
 </div>
 
-</section>
-
-
-
-<!-- ===================================================== -->
-<!-- ACTION BUTTONS -->
-<!-- ===================================================== -->
-
-<section class="action-card">
-
-    <button
-        type="button"
-        id="download-pdf"
-        class="btn btn-primary">
-
-        📄 Download PDF Report
-
-    </button>
-
-    <button
-        type="button"
-        id="print-report"
-        class="btn btn-secondary">
-
-        🖨 Print Report
-
-    </button>
-
-    <button
-        type="reset"
-        id="reset-calculator"
-        class="btn btn-light">
-
-        ↺ Reset Calculator
-
-    </button>
-
-</section>
+</aside>
 
 </form>
 
 </main>
-
-
 
 <!-- ===================================================== -->
 <!-- FOOTER -->
@@ -1098,25 +796,22 @@ id="fast-note">
     <div class="container">
 
         <p>
-
             Sunrider India Infinity Compensation Estimator
-
         </p>
 
         <small>
-
             Built for education and business planning.
             This calculator provides estimated earnings based on
             the 2025 compensation structure and should not be
             considered an official payout statement.
-
         </small>
 
     </div>
 
 </footer>
 
-
+</div>
+<!-- /.app-shell -->
 
 <!-- ===================================================== -->
 <!-- JAVASCRIPT -->
