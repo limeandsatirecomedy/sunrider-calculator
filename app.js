@@ -631,8 +631,8 @@ if(heroAverage){
     const breakdown = q("#breakdown");
 
 if (breakdown) {
-    breakdown.innerHTML = `
 
+breakdown.innerHTML = `
         <div class="line">
 
             <span>Personal Sales Commission</span>
@@ -709,7 +709,9 @@ if (breakdown) {
 
     `;
 
-}   // <-- End calculate()
+}
+}
+// <-- End calculate()
 
 
 
@@ -810,25 +812,16 @@ q("#download-pdf")?.addEventListener("click", () => {
 
     const rows = [
 
-        ["Retail Sales Bonus", q("#retail-result").textContent],
+["Retail Sales Bonus", q("#retail-result").textContent.replace("₹","Rs. ")],
+["Fast Start Bonus", q("#fast-result").textContent.replace("₹","Rs. ")],
+["Ace Royal Advancement", q("#ace-result").textContent.replace("₹","Rs. ")],
+["Unilevel Bonus", q("#unilevel-result").textContent.replace("₹","Rs. ")],
+["Development Bonus", q("#development-result").textContent.replace("₹","Rs. ")],
+["Check Match Bonus", q("#check-result").textContent.replace("₹","Rs. ")],
+["Turbo Infinity Bonus", q("#turbo-result").textContent.replace("₹","Rs. ")],
+["Icon Bonus", q("#icon-result").textContent.replace("₹","Rs. ")]
 
-        ["Fast Start Bonus", q("#fast-result").textContent],
-
-        ["Ace Royal Advancement", q("#ace-result").textContent],
-
-        ["Unilevel Bonus", q("#unilevel-result").textContent],
-
-        ["Development Bonus", q("#development-result").textContent],
-
-        ["Monthly Fixed Bonus", q("#fixed-result").textContent],
-
-        ["Check Match Bonus", q("#check-result").textContent],
-
-        ["Turbo Infinity Bonus", q("#turbo-result").textContent],
-
-        ["Icon Bonus", q("#icon-result").textContent]
-
-    ];
+];
 
     rows.forEach(r => {
 
@@ -852,7 +845,13 @@ q("#download-pdf")?.addEventListener("click", () => {
 
     y += 10;
 
-    line(q("#total").textContent, 20, y, 20, true);
+    line(
+    q("#total").textContent.replace("₹","Rs. "),
+    20,
+    y,
+    20,
+    true
+);
 
     y += 18;
 
