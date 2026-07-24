@@ -1326,3 +1326,189 @@ to{
 }
 
 }
+/*=========================================================
+ FAST START TABLE & SUMMARY
+=========================================================*/
+
+.table-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.fs-achievers-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.fs-achievers-table th {
+    text-align: left;
+    padding: 8px;
+    background: var(--background);
+    color: var(--muted);
+    font-weight: 700;
+    border-bottom: 1px solid var(--border);
+}
+
+.fs-achievers-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #f0f1f4;
+    vertical-align: middle;
+}
+
+.fs-achievers-table input[type="number"] {
+    height: 30px;
+    padding: 0 8px;
+    font-size: 13px;
+}
+
+.fs-achievers-table .row-total {
+    text-align: right;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.downline-sum-row td {
+    padding-top: 12px;
+    font-weight: 800;
+    color: var(--text);
+    border-bottom: none;
+}
+
+.downline-sum-row td:last-child {
+    text-align: right;
+    color: var(--primary);
+}
+
+.fs-grand-summary {
+    background: var(--background);
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    margin-top: 10px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 4px;
+    color: var(--muted);
+}
+
+.summary-line.grand {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+    font-size: 13.5px;
+    color: var(--primary-dark);
+    font-weight: 800;
+}
+/*=========================================================
+ COLLAPSIBLE DOWNLINE TABLE
+=========================================================*/
+
+.fs-collapsible {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.fs-toggle-btn {
+    width: 100%;
+    background: #f9fafb;
+    border: none;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+}
+
+.fs-toggle-btn:hover {
+    background: #f3f4f6;
+}
+
+.fs-arrow {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.fs-collapsible.active .fs-arrow {
+    transform: rotate(180deg);
+}
+
+.fs-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: #fff;
+}
+
+.fs-collapsible.active .fs-content {
+    max-height: 500px; /* Adjust if table gets very long */
+}
+
+.fs-achievers-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.fs-achievers-table th {
+    text-align: left;
+    padding: 10px;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+}
+
+.fs-achievers-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.fs-achievers-table input[type="number"] {
+    height: 32px;
+    width: 60px;
+    padding: 0 5px;
+}
+
+.fs-achievers-table .row-total {
+    text-align: right;
+    font-weight: 700;
+}
+
+.fs-grand-summary {
+    background: var(--primary-tint);
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--primary);
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.summary-line.grand {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(166, 25, 46, 0.1);
+    font-size: 14px;
+    color: var(--primary-dark);
+    font-weight: 800;
+}
