@@ -270,32 +270,43 @@ function calculate(e){
 
 
     /* ======================================================
-       FAST START BONUS
+       FAST START BONUS (WITH COLLAPSIBLE DOWNLINE)
     ====================================================== */
 
-   let fastBonus = 0;
+    // 1. Personal Calculation
+    let myFastBonus = 0;
+    const selectedPromotion = q("#fast-rank").value;
+    if (selectedPromotion !== "" && q("#fast-time").value === "yes") {
+        myFastBonus = fast[selectedPromotion] || 0;
+    }
 
-const selectedPromotion = q("#fast-rank").value;
+    // 2. Downline Calculation
+    const dlTable = {
+        starPrime: { qty: n("#dl-star-prime"), val: 2500, el: "#total-dl-star-prime" },
+        starElite: { qty: n("#dl-star-elite"), val: 5000, el: "#total-dl-star-elite" },
+        ace:       { qty: n("#dl-ace"),        val: 8000, el: "#total-dl-ace" },
+        acePrime:  { qty: n("#dl-ace-prime"),  val: 11000, el: "#total-dl-ace-prime" },
+        aceElite:  { qty: n("#dl-ace-elite"),  val: 13500, el: "#total-dl-ace-elite" }
+    };
 
-if (
-    selectedPromotion !== "" &&
-    q("#fast-time").value === "yes"
-) {
-    fastBonus = fast[selectedPromotion] || 0;
-}
+    let downlineTotal = 0;
+    for (let key in dlTable) {
+        const rowTotal = dlTable[key].qty * dlTable[key].val;
+        downlineTotal += rowTotal;
+        q(dlTable[key].el).textContent = money(rowTotal);
+    }
 
-    out.fast = fastBonus;
+    // 3. Final Outputs
+    const grandFastStart = myFastBonus + downlineTotal;
+    out.fast = grandFastStart;
 
-    q("#fast-result").textContent = money(out.fast);
+    q("#fast-my-bonus").textContent = money(myFastBonus);
+    q("#fast-dl-display").textContent = money(downlineTotal);
+    q("#fast-grand-display").textContent = money(grandFastStart);
+    q("#fast-result").textContent = money(grandFastStart);
 
-    const sponsorMatch =
-        q("#fast-sponsor").value === "yes"
-            ? fastBonus
-            : 0;
-
-    q("#fast-note").textContent =
-        `Fast Start: ${money(out.fast)}  |  Sponsor Match: ${money(sponsorMatch)} (reference only)`;
-
+    const sponsorMatch = q("#fast-sponsor").value === "yes" ? myFastBonus : 0;
+    q("#fast-note").textContent = `My FS: ${money(myFastBonus)} | Downline: ${money(downlineTotal)} | Sponsor Match (Ref): ${money(sponsorMatch)}`;
 
 
     /* ======================================================
@@ -883,3 +894,10 @@ if("serviceWorker" in navigator){
     );
 
 }
+/* ======================================================
+   FAST START TOGGLE LOGIC
+====================================================== */
+q("#fs-toggle").addEventListener("click", function() {
+    const parent = this.parentElement;
+    parent.classList.toggle("active");
+});
