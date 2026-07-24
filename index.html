@@ -282,68 +282,110 @@ href="styles.css">
 <!-- 2. FAST START BONUS -->
 
 <section class="panel">
-
     <div class="panel-header">
-
         <div class="panel-title-group">
-
             <span class="panel-icon">🚀</span>
-
             <h2 class="panel-title">2. Fast Start Bonus</h2>
-
         </div>
-
         <div class="panel-value" id="fast-result">₹0.00</div>
-
     </div>
 
     <p class="panel-desc">
-        Fast Start Bonus is awarded when the qualifying title
-        is achieved within the prescribed period.
+        Select your personal promotion and expand the section below to add downline achievers.
     </p>
 
-    <div class="field-grid three">
-
+    <!-- My Personal Promotion -->
+    <div class="field-grid three" style="margin-bottom: 15px;">
         <div class="field">
-
-            <label>Promotion Achieved</label>
-
+            <label>My Promotion</label>
             <select id="fast-rank"></select>
-
         </div>
-
         <div class="field">
-
             <label>Qualified Within Time?</label>
-
             <select id="fast-time">
-
                 <option value="yes">Yes</option>
-
                 <option value="no">No</option>
-
             </select>
-
         </div>
-
         <div class="field">
-
             <label>Sponsor Match Eligible?</label>
-
             <select id="fast-sponsor">
-
                 <option value="yes">Yes</option>
-
                 <option value="no">No</option>
-
             </select>
-
         </div>
+    </div>
 
+    <!-- Collapsible Downline Section -->
+    <div class="fs-collapsible">
+        <button type="button" class="fs-toggle-btn" id="fs-toggle">
+            <span>Applicable Downline Fast Start Achievers</span>
+            <span class="fs-arrow">▼</span>
+        </button>
+        
+        <div class="fs-content" id="fs-content">
+            <table class="fs-achievers-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Bonus</th>
+                        <th style="width: 70px;">Qty</th>
+                        <th style="text-align: right;">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Star Prime</td>
+                        <td>₹2,500</td>
+                        <td><input type="number" id="dl-star-prime" value="0" min="0"></td>
+                        <td class="row-total" id="total-dl-star-prime">₹0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Star Elite</td>
+                        <td>₹5,000</td>
+                        <td><input type="number" id="dl-star-elite" value="0" min="0"></td>
+                        <td class="row-total" id="total-dl-star-elite">₹0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Ace</td>
+                        <td>₹8,000</td>
+                        <td><input type="number" id="dl-ace" value="0" min="0"></td>
+                        <td class="row-total" id="total-dl-ace">₹0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Ace Prime</td>
+                        <td>₹11,000</td>
+                        <td><input type="number" id="dl-ace-prime" value="0" min="0"></td>
+                        <td class="row-total" id="total-dl-ace-prime">₹0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Ace Elite</td>
+                        <td>₹13,500</td>
+                        <td><input type="number" id="dl-ace-elite" value="0" min="0"></td>
+                        <td class="row-total" id="total-dl-ace-elite">₹0.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Permanent Summary Box (Always Visible) -->
+    <div class="fs-grand-summary">
+        <div class="summary-line">
+            <span>Your Personal Bonus:</span>
+            <strong id="fast-my-bonus">₹0.00</strong>
+        </div>
+        <div class="summary-line">
+            <span>Downline Total Bonus:</span>
+            <strong id="fast-dl-display">₹0.00</strong>
+        </div>
+        <div class="summary-line grand">
+            <span>Grand Total Fast Start:</span>
+            <strong id="fast-grand-display">₹0.00</strong>
+        </div>
     </div>
 
     <p class="formula-note" id="fast-note"></p>
-
 </section>
 
 <!-- 3. ACE ROYAL ADVANCEMENT BONUS -->
